@@ -1,0 +1,11 @@
+{
+    "firstname" : "Mari",
+    "lastname" : "Barros",
+    "totalprice" : 120,
+    "depositpaid" : false,
+    "bookingdates" : {
+        "checkin" : "2025-09-27",
+        "checkout" : "2025-09-27"
+    },
+    "additionalneeds" : "Breakfast"
+}
