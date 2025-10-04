@@ -2,6 +2,7 @@
 *** Settings ***
 Library    RequestsLibrary
 Library    FakerLibrary
+Library    String
 
 *** Keywords ***
 Create Token
@@ -33,3 +34,13 @@ Gerar um Nome aleatório
     Set Global Variable    ${nome}    ${gerar_nome}
     RETURN                 ${nome}
 
+
+
+Gerar um CNPJ
+    ${gerar_cnpj}        FakerLibrary.cnpj
+    ${gerar_cnpj}        Remove String        ${gerar_cnpj}    .
+    ${gerar_cnpj}        Remove String        ${gerar_cnpj}    /
+    ${gerar_cnpj}        Remove String        ${gerar_cnpj}    -
+    Set Global Variable    ${cnpj_gerado}     ${gerar_cnpj}
+    RETURN        ${cnpj_gerado}
+    Log To Console     ${cnpj_gerado}
